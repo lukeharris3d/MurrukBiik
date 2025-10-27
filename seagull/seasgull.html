@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BounceInc Gold Coast | 3D Viewer</title>
+
+    <!-- 1. Import the Model Viewer component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <style>
+        /* Basic reset for a fullscreen experience */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; 
+            background-color: #1E1E1E; /* Added the '#' for the hex color */
+        }
+
+        /* 2. Style the <model-viewer> tag itself to be fullscreen */
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none; /* Removes any default border */
+        }
+
+        /* Optional: Style the AR button to look nicer */
+        #ar-button {
+            background-color: #3483eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 3. The single, complete <model-viewer> tag -->
+<!-- Make sure your asset paths are correct! -->
+<model-viewer 
+    src="seagull.glb"
+    environment-image="https://github.com/google/model-viewer/blob/master/packages/shared-assets/environments/pillars_1k.hdr"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    tone-mapping="aces"
+    shadow-intensity="0.6"
+    shadow-softness="0.54"
+    exposure="0.98"
+    camera-orbit="-44.52deg 67.1deg 13.88m"
+    field-of-view="26.71deg"
+    min-camera-orbit="auto 0deg auto"
+    max-camera-orbit="auto 92deg auto"
+    alt="A 3D model of a seagull">
+
+    <!-- The rest of your elements (progress bar, AR button) are perfect. -->
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+
+</model-viewer>
+
+</body>
+</html>
