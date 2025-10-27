@@ -4,31 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MurrukBiik / Seagull</title>
-
-    <!-- 1. Import the Model Viewer component -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
     <style>
-        /* Basic reset for a fullscreen experience */
+
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden; 
-            background-color: #1E1E1E; /* Added the '#' for the hex color */
+            background-color: #b6b8b6;
         }
 
-        /* 2. Style the <model-viewer> tag itself to be fullscreen */
         model-viewer {
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            border: none; /* Removes any default border */
+            border: none; 
         }
 
-        /* Optional: Style the AR button to look nicer */
         #ar-button {
             background-color: #3483eb;
             color: white;
@@ -46,9 +42,6 @@
     </style>
 </head>
 <body>
-
-<!-- 3. The single, complete <model-viewer> tag -->
-<!-- Make sure your asset paths are correct! -->
 <model-viewer 
     src="https://lukeharris3d.github.io/MurrukBiik/seagull/seagull.glb"
     environment-image="https://lukeharris3d.github.io/MurrukBiik/seagull/church_exterior_2k.hdr"
@@ -65,7 +58,6 @@
     max-camera-orbit="auto 92deg auto"
     alt="A 3D model of a seagull">
 
-    <!-- The rest of your elements (progress bar, AR button) are perfect. -->
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
